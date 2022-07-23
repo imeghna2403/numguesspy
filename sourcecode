@@ -1,0 +1,42 @@
+import random
+
+
+print("\t\t\t\t\t\tWELCOME TO THE NUMBER GUESSING GAME")
+print("INSTRUCTIONS : Enter any no. between 0 and 100. A correct guess will increase the score by 10 and every incorrect guess will decrease the score by 2.")
+print("NO. OF ATTEMPTS : 5")
+attempts=5
+score=10
+print("SCORE : "+str(score))
+
+r=random.randint(0,100)
+
+while(attempts>0):
+    print("_____________________________________________________")
+    guess=input("Enter your Guess Number : ")
+    
+    if(r == guess):
+        print("CONGRATULATIONS, you have won. "+str(r)+" is the correct number.")
+        score=score+10
+        print("Score : "+str(score))
+        break
+    elif(int(r) > int(guess)):
+        print("Sorry, Incorrect Guess!")
+        score=score-2
+        attempts=attempts-1
+        print("Score : "+str(score))
+        print("Attempts left : "+str(attempts))
+        print("Hint : Enter a number greater than previous guess.")
+    elif(int(r) < int(guess)):
+        print("Sorry, Incorrect Guess!")
+        score=score-2
+        attempts=attempts-1
+        print("Score : "+str(score))
+        print("Attempts left : "+str(attempts))
+        print("Hint : Enter a number smaller than previous guess.")
+        
+        
+        print("_____________________________________________________")
+
+print("You are out of attempts.Better luck next time.")    
+
+    
